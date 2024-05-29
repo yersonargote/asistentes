@@ -8,7 +8,7 @@ export function getModel() {
     return openai(process.env.MODEL || "gpt-4o");
   } else if (
     process.env.PROVIDER === "google" &&
-    process.env.GOOGLE_GENERATIVE_API_KEY
+    process.env.GOOGLE_GENERATIVE_AI_API_KEY
   ) {
     return google(process.env.MODEL || "models/gemini-1.5-pro-latest");
   } else if (
