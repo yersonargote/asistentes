@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@ai-sdk/anthropic':
+        specifier: ^0.0.17
+        version: 0.0.17(zod@3.23.8)
       '@ai-sdk/google':
         specifier: ^0.0.16
         version: 0.0.16(zod@3.23.8)
@@ -20,6 +23,9 @@ importers:
       next:
         specifier: 14.2.3
         version: 14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      ollama-ai-provider:
+        specifier: ^0.7.0
+        version: 0.7.0(zod@3.23.8)
       react:
         specifier: ^18
         version: 18.3.1
@@ -57,6 +63,12 @@ importers:
 
 packages:
 
+  '@ai-sdk/anthropic@0.0.17':
+    resolution: {integrity: sha512-GH96m+mdz7XA1z4153g+SAGcib6CFdtjbwMXfWWE0q4iIAObeW6eC2N8VuucQdQNSbJ3h62KqdjWMho6k6L8Aw==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.0.0
+
   '@ai-sdk/google@0.0.16':
     resolution: {integrity: sha512-hpLbwW0rV5pH0fAqhLOryM13W9vy9hgBTrUmSDzP3p0gj7ihwT/tjZdVsAjaAImO99T0WQQolTxXnl8pLQMWXA==}
     engines: {node: '>=18'}
@@ -78,8 +90,34 @@ packages:
       zod:
         optional: true
 
+  '@ai-sdk/provider-utils@0.0.11':
+    resolution: {integrity: sha512-JRDrqL2FGDmLh+a4R5qbS8UrWN9Lt7DpDIY1x6owgXjXkz3Umm1czs1X32VlL0M1dpoSxu4hGBFtXd56+kDzXA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.0.0
+    peerDependenciesMeta:
+      zod:
+        optional: true
+
+  '@ai-sdk/provider-utils@0.0.8':
+    resolution: {integrity: sha512-J/ZNvFhORd3gCeK3jFvNrxp1Dnvy6PvPq21RJ+OsIEjsoHeKQaHALCWG0aJunXDuzd+Mck/lCg7LqA0qmIbHIg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.0.0
+    peerDependenciesMeta:
+      zod:
+        optional: true
+
+  '@ai-sdk/provider@0.0.5':
+    resolution: {integrity: sha512-TZDldBZ5clAsNwJ2PSeo/b1uILj9a2lvi0rnOj2RCNZDgaVqFRVIAnKyeHusCRv2lzhPIw03B3fiGI6VoLzOAA==}
+    engines: {node: '>=18'}
+
   '@ai-sdk/provider@0.0.7':
     resolution: {integrity: sha512-PZ3L2FNvw4GHI8UFKt0ZHN5R8LFyDMtP6nlQrqT8N7yAcwBJUMTPYmq6SiWCc/S6JRhUM5pU3aUoFaycoLzxlQ==}
+    engines: {node: '>=18'}
+
+  '@ai-sdk/provider@0.0.8':
+    resolution: {integrity: sha512-+gcMvyPUDfDXV9caN3CG5Le0M5K4CjqTdMV1ODg/AosApQiJW9ByN5imJPdI043zVdt+HS9WG+s0j4am7ca4bg==}
     engines: {node: '>=18'}
 
   '@alloc/quick-lru@5.2.0':
@@ -1255,6 +1293,15 @@ packages:
     resolution: {integrity: sha512-yBYjY9QX2hnRmZHAjG/f13MzmBzxzYgQhFrke06TTyKY5zSTEqkOeukBzIdVA3j3ulu8Qa3MbVFShV7T2RmGtQ==}
     engines: {node: '>= 0.4'}
 
+  ollama-ai-provider@0.7.0:
+    resolution: {integrity: sha512-mw2NusrPkBJ7OxBLdRNNIVbXKtil//mj/7n393+9kj74gT6EKzyjf+j2v9AvFi0fJwnuW1YxnJpbuw1UjfdPRQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.0.0
+    peerDependenciesMeta:
+      zod:
+        optional: true
+
   once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
 
@@ -1273,6 +1320,9 @@ packages:
   parent-module@1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
     engines: {node: '>=6'}
+
+  partial-json@0.1.7:
+    resolution: {integrity: sha512-Njv/59hHaokb/hRUjce3Hdv12wd60MtM9Z5Olmn+nehe0QDAsRtRbJPvJ0Z91TusF0SuZRIvnM+S4l6EIP8leA==}
 
   path-exists@4.0.0:
     resolution: {integrity: sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w==}
@@ -1755,6 +1805,12 @@ packages:
 
 snapshots:
 
+  '@ai-sdk/anthropic@0.0.17(zod@3.23.8)':
+    dependencies:
+      '@ai-sdk/provider': 0.0.8
+      '@ai-sdk/provider-utils': 0.0.11(zod@3.23.8)
+      zod: 3.23.8
+
   '@ai-sdk/google@0.0.16(zod@3.23.8)':
     dependencies:
       '@ai-sdk/provider': 0.0.7
@@ -1776,7 +1832,33 @@ snapshots:
     optionalDependencies:
       zod: 3.23.8
 
+  '@ai-sdk/provider-utils@0.0.11(zod@3.23.8)':
+    dependencies:
+      '@ai-sdk/provider': 0.0.8
+      eventsource-parser: 1.1.2
+      nanoid: 3.3.6
+      secure-json-parse: 2.7.0
+    optionalDependencies:
+      zod: 3.23.8
+
+  '@ai-sdk/provider-utils@0.0.8(zod@3.23.8)':
+    dependencies:
+      '@ai-sdk/provider': 0.0.5
+      eventsource-parser: 1.1.2
+      nanoid: 3.3.6
+      secure-json-parse: 2.7.0
+    optionalDependencies:
+      zod: 3.23.8
+
+  '@ai-sdk/provider@0.0.5':
+    dependencies:
+      json-schema: 0.4.0
+
   '@ai-sdk/provider@0.0.7':
+    dependencies:
+      json-schema: 0.4.0
+
+  '@ai-sdk/provider@0.0.8':
     dependencies:
       json-schema: 0.4.0
 
@@ -3145,6 +3227,14 @@ snapshots:
       define-properties: 1.2.1
       es-object-atoms: 1.0.0
 
+  ollama-ai-provider@0.7.0(zod@3.23.8):
+    dependencies:
+      '@ai-sdk/provider': 0.0.5
+      '@ai-sdk/provider-utils': 0.0.8(zod@3.23.8)
+      partial-json: 0.1.7
+    optionalDependencies:
+      zod: 3.23.8
+
   once@1.4.0:
     dependencies:
       wrappy: 1.0.2
@@ -3169,6 +3259,8 @@ snapshots:
   parent-module@1.0.1:
     dependencies:
       callsites: 3.1.0
+
+  partial-json@0.1.7: {}
 
   path-exists@4.0.0: {}
 

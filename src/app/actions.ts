@@ -1,29 +1,17 @@
 "use server";
 
-import { google } from "@ai-sdk/google";
+import { getModel } from "@/app/lib/utils";
 import { CoreMessage, ToolResultPart, streamText } from "ai";
 import { createStreamableValue } from "ai/rsc";
-
-// const groq = createOpenAI({
-//   baseURL: "https://api.groq.com/openai/v1",
-//   apiKey: process.env.GROQ_API_KEY,
-// });
-
-async function definirNivelConocimiento({ nivel }: { nivel: string }) {
-  console.log(`El nivel de conocimiento del usuario es ${nivel}.`);
-  return `El nivel de conocimiento del usuario es ${nivel}.`;
-}
 
 export async function continueConversation(messages: CoreMessage[]) {
   "use server";
   const toolResponses: ToolResultPart[] = [];
-  // const toolCalls: ToolCallPart[] = [];
   const textStream = createStreamableValue<string>("");
 
   (async () => {
     const result = await streamText({
-      // model: groq("llama3-8b-8192"),
-      model: google("models/gemini-1.5-pro-latest"),
+      model: getModel(),
       system: `You are an AI assistant designed to assess students' knowledge of object-oriented programming (OOP) concepts. Your task is to ask different types of questions, including open-ended questions, true/false questions, and multiple-choice questions, to gauge their understanding of OOP principles.
 
 Before you start asking questions, you will first inquire about the user's experience level with OOP. Based on their response, you will adjust the difficulty level of the questions accordingly.
@@ -49,15 +37,6 @@ Please match the language of the response to the user's language.
         case "text-delta":
           textStream.append(value.textDelta);
           break;
-
-        // case "tool-call":
-        //   toolCalls.push(value);
-        //   break;
-
-        // case "tool-result":
-        //   toolResponses.push(value);
-        //   textStream.append(value.result);
-        //   break;
       }
       if (done) break;
     }
